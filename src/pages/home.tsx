@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { signInWithGoogle } from "./firebase/firebase";
+
 
 type SendType = any;
 
@@ -220,30 +220,11 @@ export default function Home() {
     input.current.value = str;
   };
 
-  const signInGoogleFunc = (e: any) => {
-    signInWithGoogle()
-      .then((result) => {
-        if (result) {
-          if (result?.operationType) {
-            localStorage.setItem("user", JSON.stringify(result));
-            window.location.href = window.location.origin;
-          }
-        }
-      })
-      .catch((error) => {
-        document.body.style.backgroundColor = "primary";
-      });
-  };
+
 
   return (
     <>
-      {login ? (
-        <div className="login">
-          <button onClick={(e) => signInGoogleFunc(e)} className="login_btn">
-            Continue with Google
-          </button>
-        </div>
-      ) : (
+    
         <div className="main">
           <div className="main__left">
             <button className="main__left-btn">
@@ -823,7 +804,7 @@ export default function Home() {
             )}
           </div>
         </div>
-      )}
+      )
     </>
   );
 }
