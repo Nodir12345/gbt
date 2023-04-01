@@ -221,10 +221,9 @@ export default function Home() {
   };
 
 
-
   return (
     <>
-    
+  
         <div className="main">
           <div className="main__left">
             <button className="main__left-btn">
@@ -804,7 +803,7 @@ export default function Home() {
             )}
           </div>
         </div>
-      )
+     
     </>
   );
 }
